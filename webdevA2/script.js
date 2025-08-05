@@ -161,15 +161,16 @@ document.getElementById('clear').addEventListener('click', function() {
 
 // Function to get touch or mouse position
 function getPosition(event) {
+  const rect = canvas.getBoundingClientRect();
   if (event.touches) {
     return {
-      x: event.touches[0].clientX - canvas.offsetLeft,
-      y: event.touches[0].clientY - canvas.offsetTop
+      x: event.touches[0].clientX - rect.left,
+      y: event.touches[0].clientY - rect.top
     };
   } else {
     return {
-      x: event.offsetX,
-      y: event.offsetY
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top
     };
   }
 }
