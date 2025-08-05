@@ -1,1 +1,427 @@
+/* credits
+history of music theory: https://www.schoolofcomposition.com/history-of-music-theory/
+piano note sounds: https://freesound.org/people/TEDAgame/packs/25405/
+images for notes: made by me on musescore 4
+interval chart: https://www.musicforyoungviolinists.com/violin-online-blog/music-theory-intervals-charts-free-pdf
+hamburger menu: https://icon-library.com/icon/white-hamburger-menu-icon-24.html
+empty staff: https://www.blanksheetmusic.net/
+*/
 
+@font-face {
+    font-family: 'SugarFruit';
+    src: url('fonts/SugarFruit.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 
+Font: SugarFruit
+Author: MJType
+Website: https://www.dafont.com/sugar-fruit.font
+using sugarfruit again cuz i like the font
+*/
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* container */
+.wrapper {
+    max-inline-size: 1200px;
+    margin-inline: 30px ;
+}
+@media (width <= 800px) {
+    .wrapper {
+        margin-inline: 20px;
+    }
+}
+
+body {
+    background-color: #eafffe;
+}
+
+/* header styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.929), rgba(0, 0, 0, 0.7));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+h1 {
+    margin: 5px;
+    color: rgb(29, 214, 255);
+    font-family: SugarFruit;
+    font-size: 2.5rem;
+}
+
+nav {
+    margin-left: auto;
+    font-family: SugarFruit;
+    font-size: 1.5rem;
+}
+
+nav button {
+    color: white;
+}
+
+main {
+    margin-top: 100px;
+}
+
+/* hamburger menu */
+#hamburger-menu {
+    display: none;
+}
+
+@media (width <=800px) {
+    #hamburger-menu {
+        display: block;
+    }
+
+    .nav-btn {
+        position: absolute;
+        top: 100px;
+        right: -200px;
+        background-color: #000000c2;
+        padding: 10px;
+        border-radius: 10px;
+        transition: right 0.2s ease-in-out;
+    }
+
+    .nav-btn.show {
+        right: 0;
+    }
+
+    .nav-btn ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-btn li {
+        margin-bottom: 10px;
+    }
+
+    .nav-btn button {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: 16px;
+        cursor: pointer;
+        color: rgb(236, 236, 236);
+    }
+}
+
+/* general stying */
+h2 {
+    font-family: SugarFruit;
+    font-size: 1.9rem;
+    color: #01ccb1;
+}
+
+h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.4rem;
+    color:#650033;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+li {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+}
+
+/* showing an hiding sections */
+.section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.section.active {
+    display: block;
+}
+
+.section.active.show {
+    opacity: 1;
+}
+
+/* menu styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-inline: 10px;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:active {
+    opacity: 0.5;
+}
+
+/* timeline for music theory styling */
+.timeline {
+    position: relative;
+    margin-inline: auto;
+    list-style: none;
+    padding: 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: black;
+    /* using this just to make the timeline line */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline-point {
+    position: relative;
+    width: 50%;
+    padding-inline: 25px;
+    padding-block: 5px;
+    margin-block: 20px;
+}
+
+.timeline-point:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-point:nth-child(odd) {
+    text-align: right;
+}
+
+.dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border: 2px solid rgb(255, 200, 111);
+    top: 50%;
+    border-radius: 50%;
+}
+
+.timeline-point:nth-child(even) .dot {
+    left: -10px;
+}
+
+.timeline-point:nth-child(odd) .dot {
+    right: -10px;
+}
+
+.label {
+    font-size: 1.3rem;
+    padding-block: 10px;
+    padding-inline: 20px;
+    background-color: #ffb134;
+    border-radius: 10px 5px;
+}
+
+.timeline-point:nth-child(even) .label {
+    margin-left: 30px;
+}
+
+.timeline-point:nth-child(odd) .label {
+    margin-right: 30px;
+}
+
+.tooltip {
+    padding-block: 5px;
+    padding-inline: 20px;
+    background-color: #fffaa3;
+    border-radius: 5%;
+    margin-top: 10px;
+}
+
+/* image caption styling */
+figcaption {
+    font-size: 14px;
+    color: #666;
+}
+
+/* audio player hiding */
+#image-map-audio {
+    display: none;
+}
+
+/* quiz button styling */
+.quiz-button {
+    background-image: linear-gradient(to bottom, #ffc080, #ffa07a);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #650033;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.quiz-button:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+.quiz-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    padding: 0;
+}
+
+.quiz-section.expanded {
+    max-height: 1500px;
+    padding: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #ccc;
+}
+
+.correct {
+    background-color: #b8f5c5;
+}
+
+.incorrect {
+    background-color: #fca4a4;
+}
+
+.result {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.correct-answer {
+    font-size: 14px;
+    color: #666;
+}
+
+.final-score {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.check-btn {
+    background-color: #ffa07a;
+    color: #650033;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.check-btn:hover {
+    transform: scale(1.05);
+}
+
+.reset-quiz-btn {
+    background-color: #15ae01;
+    color: #005b37;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.reset-quiz-btn:hover {
+    transform: scale(1.05);
+}
+
+/* drawing on empty staff minigame */
+.staff-container {
+  border: 2px solid #ccc;
+}
+
+#staff-canvas {
+  border: none;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+/* footer styling */
+
+footer {
+  padding: 20px;
+  background-color: black;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+@media (width <= 800px) {
+    footer {
+        display:none;
+    }
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* drawing staff thing */
+#canvas {
+  background-image: url('images/emptystaff.png'); /* replace with your staff image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  margin: 20px;
+}
+
+#toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+#toolbar button {
+  background-color: orange;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.canvas {
+  display: flex;
+  justify-content: center;
+}
