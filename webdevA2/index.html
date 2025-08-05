@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Music Theory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Learn Music Theory</h1>
+        <nav class="nav-btn">
+            <ul>
+                <li><button id="home-btn">Home</button></li>
+                <li><button id="notes-btn">Notes</button></li>
+                <li><button id="intervals-btn">Intervals</button></li>
+                <li><button id="foreign-language-terms-btn">Foreign Terms</button></li>
+            </ul>
+        </nav>
+
+        <button id="hamburger-menu">
+            <img src="images/hamburgerwhite.jpg" alt="menu" width="70">
+        </button>
+
+    </header>
+    <div class="wrapper">
+        <main>
+            <section id="home" class="section">
+                <h2>Music Theory!</h2>
+                <p>Welcome to the beginner's guide to music theory! Music theory might seem a little mundane and
+                    pointless,
+                    so before we start learning, here's a brief introduction to music theory.</p>
+
+                <h3>Music Theory: A Brief History</h3>
+                <ol class="timeline">
+                    <li class="timeline-point">
+                        <span class="dot"></span>
+                        <span class="label">500 BCE</span>
+                        <article class="tooltip">
+                            <h3>Ancient Era</h3>
+                            <p>Ancient Greeks: Pythagoras studied acoustics and mathematics, applying his tuning method
+                                to music theory.</p>
+                        </article>
+                    </li>
+                    <li class="timeline-point">
+                        <span class="dot"></span>
+                        <span class="label">500 - 1300</span>
+                        <article class="tooltip">
+                            <h3>Middle Ages</h3>
+                            <p>Monophonic Music: Gregorian chants were a large part of worship music, and technology
+                                allowed instruments to match the development of music theory.</p>
+                        </article>
+                    </li>
+                    <li class="timeline-point">
+                        <span class="dot"></span>
+                        <span class="label">1400 - 1600</span>
+                        <article class="tooltip">
+                            <h3>Renaissance Period</h3>
+                            <p>Polyphonic Music: Polyphony became popular during the Renaissance, along with the
+                                development of notation.</p>
+                        </article>
+                    </li>
+                    <li class="timeline-point">
+                        <span class="dot"></span>
+                        <span class="label">1600 - 1750</span>
+                        <article class="tooltip">
+                            <h3>Baroque Period</h3>
+                            <p>Tonal Language: The tonal system allowed composers to explore harmonic progressions,
+                                which led to the development of the current major-minor system.</p>
+                        </article>
+                    </li>
+                    <li class="timeline-point">
+                        <span class="dot"></span>
+                        <span class="label">1750 - 1820</span>
+                        <article class="tooltip">
+                            <h3>Classical Period</h3>
+                            <p>Classical Harmony: Harmonic progressions became more predictable and phrases became
+                                balanced. Along with that, dynamic and expression markings were standardized.</p>
+                        </article>
+                    </li>
+                    <li class="timeline-point">
+                        <span class="dot"></span>
+                        <span class="label">1820 - 1900</span>
+                        <article class="tooltip">
+                            <h3>Romantic Period</h3>
+                            <p>Expansion on Tonality: With the technical side of music theory being mostly ironed out,
+                                romantic music focused more on emotions than balanced structures, leading to more free
+                                and expressive lines.</p>
+                        </article>
+                    </li>
+                    <li class="timeline-point">
+                        <span class="dot"></span>
+                        <span class="label">1900 - present</span>
+                        <article class="tooltip">
+                            <h3>Modern Day</h3>
+                            <p>Rejection of Tonality: Composers like Arnold Schoenberg and Anton Webern developed and
+                                popularised
+                                atonality and serialism, innovating on tonality and rhythmic structures.</p>
+                        </article>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="notes" class="section">
+                <h2>Notes</h2>
+                <h3>Pitch</h3>
+                <p>In music notation, the pitch of the note is determined by the position at which it is written on the
+                    staff. Generally speaking, notes written lower on the staff will have a lower pitch than notes
+                    written higher.</p>
+                <figure>
+                    <img src="images/notesimg1.png" alt="C in an octave" title="C notes">
+                    <figcaption>Two 'C' notes, an octave apart. An octave is 8 notes apart.</figcaption>
+                </figure>
+                <p>In the C Major scale (which will be used for this entire website for simplicity), there are no
+                    accidentals (# or ♭) and the notes go as such:</p>
+                <figure>
+                    <img src="images/notesimg2.png" alt="C major scale" title="C major scale" usemap="#image-map">
+                    <map name="image-map">
+                        <area data-sound="audio/c4piano.ogg" alt="c4" title="c4" coords="126,115,154,135" shape="rect"
+                            href="#">
+                        <area data-sound="audio/d4piano.ogg" alt="d4" title="d4" coords="160,110,184,126" shape="rect"
+                            href="#">
+                        <area data-sound="audio/e4piano.ogg" alt="e4" title="e4" coords="191,102,212,118" shape="rect"
+                            href="#">
+                        <area data-sound="audio/f4piano.ogg" alt="f4" title="f4" coords="220,94,245,110" shape="rect"
+                            href="#">
+                        <area data-sound="audio/g4piano.ogg" alt="g4" title="g4" coords="254,86,274,104" shape="rect"
+                            href="#">
+                        <area data-sound="audio/a4piano.ogg" alt="a4" title="a4" coords="283,78,306,96" shape="rect"
+                            href="#">
+                        <area data-sound="audio/b4piano.ogg" alt="b4" title="b4" coords="313,73,338,88" shape="rect"
+                            href="#">
+                        <area data-sound="audio/c5piano.ogg" alt="c5" title="c5" coords="346,62,368,82" shape="rect"
+                            href="#">
+                    </map>
+                    <figcaption>The C major scale, covering every position on the staff. Click on a note to hear the
+                        pitch.</figcaption>
+                </figure>
+
+                <h3>Note lenghts</h3>
+                <p>In music notation, note lengths are represented by different symbols. These are the most common note
+                    lengths:</p>
+                <ol>
+                    <li><strong>Whole note</strong> (also known as a <strong>semibreve</strong>): a note that lasts for
+                        four beats in common time.</li>
+                    <li><strong>Half note</strong> (also known as a <strong>minim</strong>): a note that lasts for two
+                        beats in common time.</li>
+                    <li><strong>Quarter note</strong> (also known as a <strong>crotchet</strong>): a note that lasts for
+                        one beat in common time.</li>
+                    <li><strong>Eighth note</strong> (also known as a <strong>quaver</strong>): a note that lasts for
+                        half a beat in common time.</li>
+                    <li><strong>Sixteenth note</strong> (also known as a <strong>semiquaver</strong>): a note that lasts
+                        for a quarter of a beat in common time.</li>
+                </ol>
+
+                <figure>
+                    <img src="images/notesimg3.png" alt="notelengths" title="notelengths" width="500">
+                    <img src="images/notesimg4.png" alt="notelengths" title="notelengths" width="500">
+                    <figcaption>Types of notes from semibreeve to semiquavers, and the number of them that can fit in
+                        one bar in common time.</figcaption>
+                </figure>
+            </section>
+
+            <section id="intervals" class="section">
+                <h2>Intervals</h2>
+                <p>Intervals might seem intimidating at first, but they're actually quite simple</p>
+                <figure>
+                    <img src="images/intervalchart.jpeg" alt="a chart of all basic intervals" title="interval chart">
+                    <figcaption>A chart of all basic intervals.</figcaption>
+                </figure>
+                <p>As you can see, intervals are simply the distance between two notes on the staff. It doesn't matter
+                    what note is the starting point, all you have to do is count the number of spaces and lines combined
+                    between the two notes.</p>
+                <button id="interval-quiz-button" class="quiz-button">Take the Interval Quiz!</button>
+            </section>
+
+            <!-- Interval Quiz section (hidden by default) -->
+            <section id="interval-quiz" class="quiz-section">
+                <h2>Quiz!</h2>
+                <!-- q1 -->
+                <div class="question">
+                    <img src="images/intervalquizimg1.png" alt="" title="">
+                    <!-- no img info given because it's a quiz -->
+                    <p>What interval is this?</p>
+                    <ul>
+                        <li><input type="radio" id="q1A1" name="q1" value="3rd"><label for="q1A1">3rd</label></li>
+                        <li><input type="radio" id="q1A2" name="q1" value="4th"><label for="q1A2">4th</label></li>
+                        <li><input type="radio" id="q1A3" name="q1" value="5th"><label for="q1A3">5th</label></li>
+                    </ul>
+                    <button class="check-btn">Check</button>
+                    <span class="result"></span>
+                </div>
+
+                <!-- q2-->
+                <div class="question">
+                    <img src="images/intervalquizimg2.png" alt="" title="">
+                    <p>What interval is this?</p>
+                    <input type="text" id="q2A">
+                    <button class="check-btn">Check</button>
+                    <span class="result"></span>
+                    <p class="correct-answer"></p>
+                </div>
+
+                <!-- q3 -->
+                <div class="question">
+                    <p>Which of these are true about intervals?</p>
+                    <ul>
+                        <li><input type="checkbox" id="q3A1" name="q3" value="diffNoteLength"><label
+                                for="q3A1">Intervals is the difference in note length of two notes</label></li>
+                        <li><input type="checkbox" id="q3A2" name="q3" value="totalSpaces"><label for="q3A2">Intervals
+                                measures the total number of spaces in a staff between two notes</label></li>
+                        <li><input type="checkbox" id="q3A3" name="q3" value="diffPitch"><label for="q3A3">Intervals is
+                                the difference in pitch of two notes</label></li>
+                        <li><input type="checkbox" id="q3A4" name="q3" value="pastOctave"><label for="q3A4">Intervals
+                                can go past an octave</label></li>
+                    </ul>
+                    <button class="check-btn">Check</button>
+                    <span class="result"></span>
+                </div>
+
+                <p class="final-score"></p>
+
+                <button class="reset-quiz-btn">Reset Quiz</button>
+            </section>
+
+            <section id="foreign-language-terms" class="section">
+                <h2>Foreign Language Terms</h2>
+                <p>Here are some very basic italian terms, along with a few german terms, that are essential to be able
+                    to read and understand notated music.</p>
+                <h3>Italian</h3>
+                <ul>
+                    <li><strong>Adagio</strong>: Slow</li>
+                    <li><strong>Allegro</strong>: Fast and Lively</li>
+                    <li><strong>Presto</strong>: Very fast</li>
+                    <li><strong>Andante</strong>: At a walking pace</li>
+                    <li><strong>Cantabile</strong>: In a singing style</li>
+                    <li><strong>Crescendo</strong>: Getting louder</li>
+                    <li><strong>Decrescendo</strong>: Getting softer</li>
+                    <li><strong>Forte</strong>: Loud</li>
+                    <li><strong>Piano</strong>: Soft</li>
+                    <li><strong>Fortissimo</strong>: Very loud</li>
+                    <li><strong>Pianissimo</strong>: Very soft</li>
+                    <li><strong>Staccato</strong>: Short and detached</li>
+                    <li><strong>Legato</strong>: Smooth and connected</li>
+                </ul>
+
+                <h3>German</h3>
+                <ul>
+                    <li><strong>Hauptstimme</strong>: Main voice</li>
+                    <li><strong>Lied</strong>: Song</li>
+                    <li><strong>Nebenstimme</strong>: Secondary voice</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>footer things</p>
+        </footer>
+    </div>
+
+    <audio id="image-map-audio" src="audio/c4piano.ogg"></audio>
+    <script src="script.js"></script>
+</body>
+
+</html>
