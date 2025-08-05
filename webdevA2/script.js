@@ -159,19 +159,61 @@ document.getElementById('clear').addEventListener('click', function() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
-// handling of mouse inputs to draw lines
+// Function to get touch or mouse position
+function getPosition(event) {
+  if (event.touches) {
+    return {
+      x: event.touches[0].clientX - canvas.offsetLeft,
+      y: event.touches[0].clientY - canvas.offsetTop
+    };
+  } else {
+    return {
+      x: event.offsetX,
+      y: event.offsetY
+    };
+  }
+}
+
+// handling of touch and mouse inputs to draw lines
 canvas.addEventListener('mousedown', function(event) {
   isDrawing = true;
-  lastX = event.offsetX;
-  lastY = event.offsetY;
+  let pos = getPosition(event);
+  lastX = pos.x;
+  lastY = pos.y;
+  ctx.beginPath();
+  ctx.moveTo(lastX, lastY);
+});
+
+canvas.addEventListener('touchstart', function(event) {
+  isDrawing = true;
+  let pos = getPosition(event);
+  lastX = pos.x;
+  lastY = pos.y;
   ctx.beginPath();
   ctx.moveTo(lastX, lastY);
 });
 
 canvas.addEventListener('mousemove', function(event) {
   if (isDrawing) {
-    let x = event.offsetX;
-    let y = event.offsetY;
+    let pos = getPosition(event);
+    let x = pos.x;
+    let y = pos.y;
+    ctx.lineWidth = lineWidth;
+    ctx.strokeStyle = strokeColor;
+    ctx.lineCap = 'round';
+    ctx.lineTo(x, y);
+    ctx.stroke();
+    lastX = x;
+    lastY = y;
+  }
+});
+
+canvas.addEventListener('touchmove', function(event) {
+  event.preventDefault(); // prevent scroll
+  if (isDrawing) {
+    let pos = getPosition(event);
+    let x = pos.x;
+    let y = pos.y;
     ctx.lineWidth = lineWidth;
     ctx.strokeStyle = strokeColor;
     ctx.lineCap = 'round';
@@ -183,5 +225,9 @@ canvas.addEventListener('mousemove', function(event) {
 });
 
 canvas.addEventListener('mouseup', function() {
+  isDrawing = false;
+});
+
+canvas.addEventListener('touchend', function() {
   isDrawing = false;
 });
