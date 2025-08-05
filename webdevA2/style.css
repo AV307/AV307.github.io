@@ -363,19 +363,6 @@ figcaption {
     transform: scale(1.05);
 }
 
-/* drawing on empty staff minigame */
-.staff-container {
-  border: 2px solid #ccc;
-}
-
-#staff-canvas {
-  border: none;
-}
-
-.controls {
-  margin-top: 20px;
-}
-
 /* footer styling */
 
 footer {
@@ -424,4 +411,8 @@ body, html {
 .canvas {
   display: flex;
   justify-content: center;
+}
+
+canvas {
+  touch-action: none;
 }
