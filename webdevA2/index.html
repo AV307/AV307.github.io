@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Music Theory</title>
     <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <!-- this line gets a warning from the html validator but it's directly from the lesson code so I'm assuming it's acceptable -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body>
@@ -156,11 +162,23 @@
                 </ol>
 
                 <figure>
-                    <img src="images/notesimg3.png" alt="notelengths" title="notelengths" width="500">
-                    <img src="images/notesimg4.png" alt="notelengths" title="notelengths" width="500">
+                    <img src="images/notesimg3.png" alt="notelengths" title="notelengths" height="100">
+                    <img src="images/notesimg4.png" alt="notelengths" title="notelengths" height="100">
                     <figcaption>Types of notes from semibreeve to semiquavers, and the number of them that can fit in
                         one bar in common time.</figcaption>
                 </figure>
+
+                <h3>Try notating on an empty staff!</h3>
+                <div id="toolbar">
+                    <label for="stroke">Stroke</label>
+                    <input id="stroke" name="stroke" type="color">
+                    <label for="line-width">Line Width</label>
+                    <input id="line-width" name="line-width" type="number" value="5">
+                    <button id="clear">Clear</button>
+                </div>
+                <div class="canvas">
+                    <canvas id="canvas" width="636" height="356"></canvas>
+                </div>
             </section>
 
             <section id="intervals" class="section">
@@ -254,11 +272,11 @@
                 </ul>
             </section>
         </main>
-
-        <footer>
-            <p>footer things</p>
-        </footer>
     </div>
+
+    <footer>
+        <img src="images/qrcode.png" alt="qrcode" title="qrcode" width="300">
+    </footer>
 
     <audio id="image-map-audio" src="audio/c4piano.ogg"></audio>
     <script src="script.js"></script>
